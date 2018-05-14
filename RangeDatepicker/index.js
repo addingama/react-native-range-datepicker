@@ -37,6 +37,8 @@ export default class RangeDatepicker extends Component {
 	}
 
 	static defaultProps = {
+    headerDateStyle: {fontSize: 34, color: '#666'},
+    headerDividerStyle: {fontSize: 80},
     viewStyle: {backgroundColor: '#fff', zIndex: 1000, alignSelf: 'center'},
 		initialMonth: '',
 		dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -219,19 +221,19 @@ export default class RangeDatepicker extends Component {
 					}
 					<View style={{ flexDirection: 'row', justifyContent: "space-between", paddingHorizontal: 20, paddingBottom: 5, alignItems: 'center'}}>
 						<View style={{flex: 1}}>
-							<Text style={{fontSize: 34, color: '#666'}}>
+							<Text style={this.props.headerDateStyle}>
 								{ this.state.startDate ? moment(this.state.startDate).format("MMM DD YYYY") : this.props.placeHolderStart}
 							</Text>
 						</View>
 
-						<View style={{}}>
-							<Text style={{fontSize: 80}}>
+						<View style={this.props.headerDividerStyle}>
+							<Text style={}>
 								/
 							</Text>
 						</View>
 
 						<View style={{flex: 1}}>
-							<Text style={{fontSize: 34, color: '#666', textAlign: 'right'}}>
+							<Text style={[this.props.headerDateStyle, { textAlign: 'right' }]}>
 								{ this.state.untilDate ? moment(this.state.untilDate).format("MMM DD YYYY") : this.props.placeHolderUntil}
 							</Text>
 						</View>
