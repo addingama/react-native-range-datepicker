@@ -68,6 +68,8 @@ export default class RangeDatepicker extends Component {
 
 	static propTypes = {
     viewStyle: PropTypes.object,
+    headerDateStyle: PropTypes.object,
+    headerDividerStyle: PropTypes.object,
 		initialMonth: PropTypes.string,
 		dayHeadings: PropTypes.arrayOf(PropTypes.string),
 		availableDates: PropTypes.arrayOf(PropTypes.string),
