@@ -23,8 +23,10 @@ const DEVICE_WIDTH = Dimensions.get('window').width;
 export default class RangeDatepicker extends Component {
 	constructor(props) {
 		super(props);
-    	this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 != r2});
-		this.state = {
+
+  	this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 != r2});
+
+    this.state = {
 			startDate: props.startDate && moment(props.startDate, 'YYYYMMDD'),
 			untilDate: props.untilDate && moment(props.untilDate, 'YYYYMMDD'),
 			availableDates: props.availableDates || null
@@ -228,7 +230,7 @@ export default class RangeDatepicker extends Component {
 							</Text>
 						</View>
 
-						<View style={this.props.headerDividerStyle}>
+						<View style={{}}>
 							<Text style={this.props.headerDividerStyle}>
 								/
 							</Text>
@@ -260,7 +262,7 @@ export default class RangeDatepicker extends Component {
 			            showsVerticalScrollIndicator={false} />
 					<View style={[styles.buttonWrapper, this.props.buttonContainerStyle]}>
 						<Button
-							title="Select Date"
+							title="Select Dates"
 							onPress={this.handleConfirmDate}
 							color={this.props.buttonColor} />
 					</View>
