@@ -69,9 +69,9 @@ export default class RangeDatepicker extends Component {
 
 
 	static propTypes = {
-    viewStyle: PropTypes.object,
-    headerDateStyle: PropTypes.object,
-    headerDividerStyle: PropTypes.object,
+    viewStyle: PropTypes.number,
+    headerDateStyle: PropTypes.number,
+    headerDividerStyle: PropTypes.number,
 		initialMonth: PropTypes.string,
 		dayHeadings: PropTypes.arrayOf(PropTypes.string),
 		availableDates: PropTypes.arrayOf(PropTypes.string),
@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
 	},
 	buttonWrapper : {
 		paddingVertical: 10,
-		paddingHorizontal: 15,
+		//paddingHorizontal: 15,
 		backgroundColor: 'white',
 		borderTopWidth: 1,
 		borderColor: '#ccc',
