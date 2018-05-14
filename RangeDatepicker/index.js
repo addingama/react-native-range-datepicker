@@ -260,7 +260,7 @@ export default class RangeDatepicker extends Component {
 			            renderRow={this.handleRenderRow}
 			            initialListSize={1}
 			            showsVerticalScrollIndicator={false} />
-					<View style={[styles.buttonWrapper, this.props.buttonContainerStyle]}>
+					<View style={[this.props.buttonContainerStyle, styles.buttonWrapper]}>
 						<Button
 							title="Select Dates"
 							onPress={this.handleConfirmDate}
