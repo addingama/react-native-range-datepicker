@@ -37,6 +37,7 @@ export default class RangeDatepicker extends Component {
 	}
 
 	static defaultProps = {
+    viewStyle: {backgroundColor: '#fff', zIndex: 1000, alignSelf: 'center'},
 		initialMonth: '',
 		dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 		maxMonth: 12,
@@ -64,6 +65,7 @@ export default class RangeDatepicker extends Component {
 
 
 	static propTypes = {
+    viewStyle: PropTypes.object,
 		initialMonth: PropTypes.string,
 		dayHeadings: PropTypes.arrayOf(PropTypes.string),
 		availableDates: PropTypes.arrayOf(PropTypes.string),
@@ -201,7 +203,7 @@ export default class RangeDatepicker extends Component {
 	render(){
 		const monthStack = this.ds.cloneWithRows(this.getMonthStack());
 			return (
-				<View style={{backgroundColor: '#fff', zIndex: 1000, alignSelf: 'center'}}>
+				<View style={this.props.viewStyle}>
 					{
 						this.props.showClose || this.props.showReset ?
 							(<View style={{ flexDirection: 'row', justifyContent: "space-between", padding: 20, paddingBottom: 10}}>
@@ -235,7 +237,7 @@ export default class RangeDatepicker extends Component {
 						</View>
 					</View>
 					{
-						this.props.infoText != "" && 
+						this.props.infoText != "" &&
 						<View style={this.props.infoContainerStyle}>
 							<Text style={this.props.infoStyle}>{this.props.infoText}</Text>
 						</View>
@@ -254,7 +256,7 @@ export default class RangeDatepicker extends Component {
 			            showsVerticalScrollIndicator={false} />
 					<View style={[styles.buttonWrapper, this.props.buttonContainerStyle]}>
 						<Button
-							title="Select Date" 
+							title="Select Date"
 							onPress={this.handleConfirmDate}
 							color={this.props.buttonColor} />
 					</View>
@@ -264,17 +266,17 @@ export default class RangeDatepicker extends Component {
 }
 
 const styles = StyleSheet.create({
-	dayHeader : { 
-		flexDirection: 'row', 
-		borderBottomWidth: 1, 
+	dayHeader : {
+		flexDirection: 'row',
+		borderBottomWidth: 1,
 		paddingBottom: 10,
 		paddingTop: 10,
 	},
 	buttonWrapper : {
-		paddingVertical: 10, 
-		paddingHorizontal: 15, 
-		backgroundColor: 'white', 
-		borderTopWidth: 1, 
+		paddingVertical: 10,
+		paddingHorizontal: 15,
+		backgroundColor: 'white',
+		borderTopWidth: 1,
 		borderColor: '#ccc',
 		alignItems: 'stretch'
 	},
