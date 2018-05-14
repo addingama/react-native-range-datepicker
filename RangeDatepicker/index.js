@@ -229,7 +229,7 @@ export default class RangeDatepicker extends Component {
 						</View>
 
 						<View style={this.props.headerDividerStyle}>
-							<Text style={}>
+							<Text style={this.props.headerDividerStyle}>
 								/
 							</Text>
 						</View>
