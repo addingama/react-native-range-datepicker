@@ -77,9 +77,6 @@ export default class RangeDatepicker extends Component {
 		availableDates: PropTypes.arrayOf(PropTypes.string),
 		maxMonth: PropTypes.number,
 		buttonColor: PropTypes.string,
-		buttonContainerStyle: PropTypes.object,
-		startDate: PropTypes.string,
-		untilDate: PropTypes.string,
 		minDate: PropTypes.string,
 		maxDate: PropTypes.string,
 		showReset: PropTypes.bool,
@@ -256,10 +253,10 @@ export default class RangeDatepicker extends Component {
 						}
 					</View>
 					<ListView
-			            dataSource={monthStack}
-			            renderRow={this.handleRenderRow}
-			            initialListSize={1}
-			            showsVerticalScrollIndicator={false} />
+			         dataSource={monthStack}
+			         renderRow={this.handleRenderRow}
+			         initialListSize={1}
+			         showsVerticalScrollIndicator={false} />
 					<View style={[this.props.buttonContainerStyle, styles.buttonWrapper]}>
 						<Button
 							title="Select Dates"
