@@ -260,7 +260,7 @@ export default class RangeDatepicker extends Component {
 			         initialListSize={1}
 			         showsVerticalScrollIndicator={false} />
 					<View style={[this.props.buttonContainerStyle, styles.buttonWrapper]}>
-            { startDate && untilDate ?
+            { this.state.startDate && this.state.untilDate ?
 						<Button
 							title="Confirm Dates"
 							onPress={this.handleConfirmDate}
