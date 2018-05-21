@@ -46,6 +46,7 @@ export default class RangeDatepicker extends Component {
 		dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 		maxMonth: 12,
 		buttonColor: 'green',
+    buttonDisabledColor: 'gray',
 		buttonContainerStyle: {},
 		showReset: true,
 		showClose: true,
@@ -77,6 +78,7 @@ export default class RangeDatepicker extends Component {
 		availableDates: PropTypes.arrayOf(PropTypes.string),
 		maxMonth: PropTypes.number,
 		buttonColor: PropTypes.string,
+		buttonDisabledColor: PropTypes.string,
 		minDate: PropTypes.string,
 		maxDate: PropTypes.string,
 		showReset: PropTypes.bool,
@@ -258,10 +260,17 @@ export default class RangeDatepicker extends Component {
 			         initialListSize={1}
 			         showsVerticalScrollIndicator={false} />
 					<View style={[this.props.buttonContainerStyle, styles.buttonWrapper]}>
+            { startDate && untilDate ?
 						<Button
-							title="Select Dates"
+							title="Confirm Dates"
 							onPress={this.handleConfirmDate}
 							color={this.props.buttonColor} />
+              :
+						<Button
+							title="Select Dates"
+							onPress={null}
+							color={this.props.buttonDisabledColor} />
+            }
 					</View>
 				</View>
 			)
