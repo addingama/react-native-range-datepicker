@@ -18,7 +18,7 @@ import Month from './Month';
 // import styles from './styles';
 import moment from 'moment';
 
-const DEVICE_WIDTH = Dimensions.get('window').width;
+const DEVICE_WIDTH = Dimensions.get('window').width - 20;
 
 export default class RangeDatepicker extends Component {
 	constructor(props) {
@@ -268,7 +268,7 @@ export default class RangeDatepicker extends Component {
               :
 						<Button
 							title="Select Dates"
-							onPress={null}
+							onPress={() => {}}
 							color={this.props.buttonDisabledColor} />
             }
 					</View>
