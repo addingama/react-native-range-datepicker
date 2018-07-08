@@ -18,7 +18,7 @@ import Month from './Month';
 // import styles from './styles';
 import moment from 'moment';
 
-const DEVICE_WIDTH = Dimensions.get('window').width - 20;
+const DEVICE_WIDTH = Dimensions.get('window').width;
 
 export default class RangeDatepicker extends Component {
 	constructor(props) {
@@ -42,6 +42,7 @@ export default class RangeDatepicker extends Component {
     headerDateStyle: {fontSize: 34, color: '#666'},
     headerDividerStyle: {fontSize: 80},
     viewStyle: {backgroundColor: '#fff', zIndex: 1000, alignSelf: 'center'},
+    widthModifier: 0,
 		initialMonth: '',
 		dayHeadings: ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'S'],
 		maxMonth: 12,
@@ -250,7 +251,7 @@ export default class RangeDatepicker extends Component {
 					<View style={styles.dayHeader}>
 						{
 							this.props.dayHeadings.map((day, i) => {
-								return (<Text style={{width: DEVICE_WIDTH / 7, textAlign: 'center'}} key={i}>{day}</Text>)
+								return (<Text style={{width: (DEVICE_WIDTH-this.props.widthModifier) / 7, textAlign: 'center'}} key={i}>{day}</Text>)
 							})
 						}
 					</View>
