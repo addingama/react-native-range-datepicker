@@ -43,7 +43,7 @@ export default class RangeDatepicker extends Component {
     headerDividerStyle: {fontSize: 80},
     viewStyle: {backgroundColor: '#fff', zIndex: 1000, alignSelf: 'center'},
 		initialMonth: '',
-		dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+		dayHeadings: ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'S'],
 		maxMonth: 12,
 		buttonColor: 'green',
     buttonDisabledColor: 'gray',
