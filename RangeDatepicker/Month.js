@@ -88,7 +88,7 @@ export default class Month extends React.Component {
 					if(untilDate && untilDate.format('YYYYMMDD') == currDate.format('YYYYMMDD')){
 						dayObject.type = 'last';
 					}
-					if((startDate && startDate.format('YYYYMMDD') < currDate.format('YYYYMMDD')) && 
+					if((startDate && startDate.format('YYYYMMDD') < currDate.format('YYYYMMDD')) &&
 						(untilDate && untilDate.format('YYYYMMDD') > currDate.format('YYYYMMDD')))
 						dayObject.type = 'between';
 
@@ -99,7 +99,7 @@ export default class Month extends React.Component {
 				else{
 					if(startDate && untilDate &&
 						(
-							startDate.format('YYYYMMDD') < currDate.format('YYYYMMDD')  && 
+							startDate.format('YYYYMMDD') < currDate.format('YYYYMMDD')  &&
 							untilDate.format('YYYYMMDD') >= currDate.format('YYYYMMDD')
 						)
 					)
@@ -125,7 +125,7 @@ export default class Month extends React.Component {
 					{
 						dayStack.map((days, i) => {
 							return (
-								<DayRow days={days} dayProps={dayProps} key={i} onSelectDate={this.props.onSelectDate}/>
+								<DayRow days={days} componentWidth={this.props.componentWidth} dayProps={dayProps} key={i} onSelectDate={this.props.onSelectDate}/>
 							)
 						})
 					}

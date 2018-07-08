@@ -195,6 +195,7 @@ export default class RangeDatepicker extends Component {
 		return (
 			<Month
 				onSelectDate={this.onSelectDate}
+        componentWidth={DEVICE_WIDTH-this.props.widthModifier}
 				startDate={startDate}
 				untilDate={untilDate}
 				availableDates={availableDates}
